@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
 import './components/sampleComponent';
-import WidgetHomeComponent from './components/widgetHomeComponent';
+import WidgetContainer from './components/widgetContainer';
 
 function App() {
   return (
     <div className="App">
-      <WidgetHomeComponent/>
+      <WidgetContainer/>
     </div>
   );
 }
