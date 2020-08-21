@@ -1,3 +1,7 @@
+.widgetContainer {
+    width: 550px;
+}
+
 .widgetBody {
     padding: 20px;
 }
