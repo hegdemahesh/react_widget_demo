@@ -13,10 +13,12 @@ import './widgetContainer.css';
 export default class WidgetContainer extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { pageState: 1 };
+        this.state = { pageState: 1 , viewState: 2 };
         this.connectClick = this.connectClick.bind(this);
         this.signInClicked = this.signInClicked.bind(this);
         this.closeClick = this.closeClick.bind(this);
+        this.maximize = this.maximize.bind(this);
+        this.minimize = this.minimize.bind(this);
     }
 
     connectClick(){
@@ -30,7 +32,32 @@ export default class WidgetContainer extends React.Component {
     closeClick() {
         this.setState({ pageState: 2 } );
     }
+
+    maximize() {
+        this.setState({ viewState: 2 });
+    }
+
+    minimize() {
+        this.setState({ viewState: 1});
+    }
+
     render() {
+
+        let controlElement;
+        if( this.state.viewState === 1){
+            controlElement = 
+            <Fab onClick={this.maximize} className="fabIcons" color="primary" aria-label="maximize">
+                <MaximizeIcon />
+            </Fab>
+            
+        }
+        else {
+            controlElement = 
+            <Fab onClick={this.minimize} className="fabIcons" color="primary" aria-label="minimize">
+                <MinimizeIcon />
+            </Fab>
+        }
+
         let widgetElement;
         if( this.state.pageState === 1 ) {
             widgetElement = <WidgetHomeComponent connectClick={this.connectClick}/>
@@ -41,21 +68,29 @@ export default class WidgetContainer extends React.Component {
         else {
             widgetElement = <WidgetGoogleSignInComponent closeClick={this.closeClick}></WidgetGoogleSignInComponent>
         }
+
+        let widgetBody;
+        if( this.state.viewState === 2){
+            widgetBody = 
+            <Card className="widgetBody">
+                {widgetElement}
+            </Card>
+        }
+        else {
+            widgetBody = 
+            <Card className="widgetBody">
+                Hidden widget Content
+            </Card>
+        }
+
         let widget =
             <div className="widgetContainer">
-                <Card className="widgetBody">
-                    {widgetElement}
-                </Card>
+                {widgetBody}
                 <div className="spacer1">
 
                 </div>
                 <div className="widgetControls">
-                    <Fab className="fabIcons" color="primary" aria-label="maximize">
-                        <MaximizeIcon />
-                    </Fab>
-                    <Fab className="fabIcons" color="primary" aria-label="minimize">
-                        <MinimizeIcon />
-                    </Fab>
+                    {controlElement}
                     <div className='spacerh'></div>
                     <Fab className="fabIcons" color="primary" aria-label="add">
                         <CloseIcon />
