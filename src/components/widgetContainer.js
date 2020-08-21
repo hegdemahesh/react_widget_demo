@@ -1,7 +1,9 @@
 import React from 'react';
+import Card from '@material-ui/core/Card';
 import WidgetHomeComponent from './widgetHomeComponent';
 import WidgetWelcomeComponent from './WidgetWelcomeComponent';
 import WidgetGoogleSignInComponent from './WidgetGoogleSignInComponent';
+import './widgetContainer.css';
 
 export default class WidgetContainer extends React.Component {
     constructor(props) {
@@ -21,9 +23,9 @@ export default class WidgetContainer extends React.Component {
         }
         let widget =
             <div className="widgetContainer">
-                <div className="widgetBody">
+                <Card className="widgetBody">
                     {widgetElement}
-                </div>
+                </Card>
                 <div className="widgetControls"></div>
             </div>;
         return widget;
