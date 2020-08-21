@@ -15,10 +15,15 @@ export default class WidgetContainer extends React.Component {
         super(props);
         this.state = { pageState: 1 };
         this.connectClick = this.connectClick.bind(this);
+        this.signInClicked = this.signInClicked.bind(this);
     }
 
     connectClick(){
         this.setState({ pageState: 2 } );
+    }
+
+    signInClicked() {
+        this.setState({ pageState: 3 } );
     }
     render() {
         let widgetElement;
@@ -26,7 +31,7 @@ export default class WidgetContainer extends React.Component {
             widgetElement = <WidgetHomeComponent connectClick={this.connectClick}/>
         }
         else if( this.state.pageState === 2){
-            widgetElement = <WidgetWelcomeComponent></WidgetWelcomeComponent>
+            widgetElement = <WidgetWelcomeComponent signInClicked={this.signInClicked}></WidgetWelcomeComponent>
         }
         else {
             widgetElement = <WidgetGoogleSignInComponent></WidgetGoogleSignInComponent>
