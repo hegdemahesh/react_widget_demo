@@ -1,0 +1,4 @@
+.cardElement {
+    display: flex;
+    flex-direction: column;
+}
