@@ -24,7 +24,7 @@ class WidgetHomeComponent extends React.Component {
                 <p>Choose the account you want to connect with</p>
             </div>
             <div>
-                <SelectableCard></SelectableCard>
+                <SelectableCard title='headway' titleIcon='headway icon' icon={hlogo}></SelectableCard>
             </div>
         </div>;
         return divElement;
