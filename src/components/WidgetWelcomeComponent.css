@@ -1,0 +1,33 @@
+.widgetWelcomeHolder {
+    background-color: white;
+    
+    
+}
+
+.widgetBg {
+    position: relative;
+    z-index: 30;
+}
+
+.bgImage {
+   
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 30;
+}
+
+.welcomeWidgetContent {
+    display: flex;
+    flex-direction: column;
+    z-index: 500;
+    background-color: white;
+}
+
+.spacerv {
+    height: 20px;
+}
+
+.contentItems {
+    z-index: 500;
+}
