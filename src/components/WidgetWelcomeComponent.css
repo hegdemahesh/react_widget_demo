@@ -47,3 +47,15 @@
 .whiteText {
     color: white;
 }
+
+.higherIndex {
+    z-index: 500;
+}
+
+.conversationItem {
+    align-self: stretch;
+}
+
+.spacerV {
+    min-height: 10px;
+}

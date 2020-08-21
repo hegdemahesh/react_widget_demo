@@ -3,6 +3,7 @@ import bg from '../assets/bgImage01.png';
 import './WidgetWelcomeComponent.css';
 import HLogoSmall from '../assets/HLogo_small.png';
 import handIcon from '../assets/handIcon.png';
+import Card from '@material-ui/core/Card';
 
 
 export default class WidgetWelcomeComponent extends React.Component {
@@ -29,6 +30,39 @@ export default class WidgetWelcomeComponent extends React.Component {
                         Ask us anything, or share your feedback.
                     </p>
                 </div>
+                <Card className="higherIndex conversationItem">
+                        <h5 className="higherIndex">Start a conversation</h5>
+                </Card>
+                <div className='spacerV'>
+
+                </div>
+                <Card className="higherIndex conversationItem">
+                        <h5 className="higherIndex">Start a conversation</h5>
+                        <div className="higherIndex">
+                            afsdfasdddddddddddddddddddd
+                        </div>
+                        <div className="higherIndex">
+                            afsdfasdddddddddddddddddddd
+                        </div>
+                        <div className="higherIndex">
+                            afsdfasdddddddddddddddddddd
+                        </div>
+                        <div className="higherIndex">
+                            afsdfasdddddddddddddddddddd
+                        </div>
+                        <div className="higherIndex">
+                            afsdfasdddddddddddddddddddd
+                        </div>
+                        <div className="higherIndex">
+                            afsdfasdddddddddddddddddddd
+                        </div>
+                        <div className="higherIndex">
+                            afsdfasdddddddddddddddddddd
+                        </div>
+                        <div className="higherIndex">
+                            afsdfasdddddddddddddddddddd
+                        </div>
+                </Card>
             </div>
         </div>;
         return widgetElement;
