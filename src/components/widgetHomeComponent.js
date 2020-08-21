@@ -9,10 +9,14 @@ import otheLogoVSmall from '../assets/otheLogo_vsmall.png';
 import Fab from '@material-ui/core/Fab';
 
 
-class WidgetHomeComponent extends React.Component {
+function WidgetHomeComponent(props) {
+
+    function connectClick(e) {
+        e.preventDefault();
+        props.connectClick();
+    }
     
-    render() {
-        let divElement = 
+    let divElement = 
         <div className="HomeWidgetBox">
             <div className="LogoBox">
                 <img alt='hlogo'
@@ -34,14 +38,13 @@ class WidgetHomeComponent extends React.Component {
 
             </div>
                 <div className="connectButtonBox">
-                    <Fab variant="extended" color="primary" aria-label="Connect">
+                    <Fab onClick={connectClick} variant="extended" color="primary" aria-label="Connect">
                         
                             Connect
                     </Fab>
                 </div>
         </div>;
         return divElement;
-    }
 }
 
 export default WidgetHomeComponent;

@@ -9,11 +9,16 @@ export default class WidgetContainer extends React.Component {
     constructor(props) {
         super(props);
         this.state = { pageState: 1 };
+        this.connectClick = this.connectClick.bind(this);
+    }
+
+    connectClick(){
+        this.setState({ pageState: 2 } );
     }
     render() {
         let widgetElement;
         if( this.state.pageState === 1 ) {
-            widgetElement = <WidgetHomeComponent/>
+            widgetElement = <WidgetHomeComponent connectClick={this.connectClick}/>
         }
         else if( this.state.pageState === 2){
             widgetElement = <WidgetWelcomeComponent></WidgetWelcomeComponent>
