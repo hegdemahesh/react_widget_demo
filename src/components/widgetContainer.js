@@ -21,16 +21,29 @@ export default class WidgetContainer extends React.Component {
         this.minimize = this.minimize.bind(this);
     }
 
+    componentDidMount() {
+        if( sessionStorage.getItem('pageState') !== null) {
+            let pageStateInt = parseInt(sessionStorage.getItem('pageState'));
+            this.setState({ pageState: pageStateInt });
+        }
+        
+        
+    }
+
+
     connectClick(){
         this.setState({ pageState: 2 } );
+        sessionStorage.setItem('pageState', 2);
     }
 
     signInClicked() {
         this.setState({ pageState: 3 } );
+        sessionStorage.setItem('pageState', 3)
     }
 
     closeClick() {
         this.setState({ pageState: 2 } );
+        sessionStorage.setItem('pageState', 2)
     }
 
     maximize() {
