@@ -1,5 +1,10 @@
 import React from 'react';
 import Card from '@material-ui/core/Card';
+import { makeStyles } from '@material-ui/core/styles';
+import Fab from '@material-ui/core/Fab';
+import CloseIcon from '@material-ui/icons/Close';
+import MinimizeIcon from '@material-ui/icons/Minimize';
+import MaximizeIcon from '@material-ui/icons/Fullscreen';
 import WidgetHomeComponent from './widgetHomeComponent';
 import WidgetWelcomeComponent from './WidgetWelcomeComponent';
 import WidgetGoogleSignInComponent from './WidgetGoogleSignInComponent';
@@ -31,7 +36,23 @@ export default class WidgetContainer extends React.Component {
                 <Card className="widgetBody">
                     {widgetElement}
                 </Card>
-                <div className="widgetControls"></div>
+                <div className="spacer1">
+
+                </div>
+                <div className="widgetControls">
+                    <Fab className="fabIcons" color="primary" aria-label="maximize">
+                        <MaximizeIcon />
+                    </Fab>
+                    <Fab className="fabIcons" color="primary" aria-label="minimize">
+                        <MinimizeIcon />
+                    </Fab>
+                    <div className='spacerh'></div>
+                    <Fab className="fabIcons" color="primary" aria-label="add">
+                        <CloseIcon />
+                    </Fab>
+                    
+                    
+                </div>
             </div>;
         return widget;
     }

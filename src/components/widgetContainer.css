@@ -1,7 +1,28 @@
 .widgetContainer {
     width: 550px;
+    min-height: 100vh;
 }
 
 .widgetBody {
     padding: 20px;
+    flex-grow: 1;
+}
+
+.fabIcons {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.spacer1 {
+    min-height: 10px;
+}
+
+.spacerh {
+    min-width: 10px;
+}
+
+.widgetControls {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }
