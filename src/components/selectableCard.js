@@ -8,11 +8,14 @@ import Radio from '@material-ui/core/Radio';
 const useStyles = makeStyles({
     root: {
       minWidth: 275,
+      marginTop: '10px'
+
     },
     content: {
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
+        padding: '4px !important',
     },
     bullet: {
       display: 'inline-block',
@@ -32,10 +35,10 @@ export default function SelectableCard(props) {
     const classes = useStyles();
     
     let cardUIElement = 
-        <Card className={classes.root}>
+        <Card   className={classes.root}>
             <CardContent className={classes.content}>
                 <Radio
-                    checked={true}
+                    checked={props.checked}
                     color="default"
                 />
                 <p>{props.title}</p>

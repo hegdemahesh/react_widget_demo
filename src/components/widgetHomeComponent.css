@@ -21,3 +21,12 @@
     justify-content: left;
     align-items: flex-start;
 }
+
+.selectionBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.connectButtonBox {
+    margin-top: '10px'
+}
